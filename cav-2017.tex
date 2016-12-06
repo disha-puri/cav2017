@@ -1,0 +1,67 @@
+%% CAV 2017
+
+% Deadlines:
+% papers due : Jan 24, 2017
+% (lncs format, 16 pages max excluding appendix and references)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[letterpaper]{llncs}
+\pagestyle{headings}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{url} 
+\usepackage{float}
+
+\newcommand{\keywords}[1]{\par\addvspace\baselineskip
+\noindent\keywordname\enspace\ignorespaces#1}
+\newcommand{\eg}{\mbox{\em e.g.}}
+\newcommand{\viz}{\mbox{\em viz.}}
+
+\usepackage{setspace}
+\usepackage{algpseudocode}
+\usepackage{algorithm}
+\usepackage{soul}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\renewcommand{\labelitemi}{\tiny$\blacksquare$}
+
+\newlength\myindent
+\setlength\myindent{2em}
+\newcommand\bindent{
+  \begingroup
+  \setlength{\itemindent}{\myindent}
+  \addtolength{\algorithmicindent}{\myindent}
+}
+\newcommand\eindent{\endgroup}
+
+\begin{document}
+
+\mainmatter  % start of an individual contribution
+
+\title{Formal Verification Techniques for Behaviorally Synthesized Loop Pipelines}
+
+% the name(s) of the author(s) follow(s) next
+\author{Disha Puri\inst{1}
+\and Sandip Ray\inst{2} 
+\and Fei Xie\inst{1}
+\and Kecheng Hao\inst{1}} 
+
+\institute{Department of Computer Science, Portland State University, Portland, OR 97207.
+\and
+NXP Semiconductors}
+
+\maketitle
+\input{abstract.tex}
+\input{introduction.tex}
+\input{background.tex}
+\input{no-theorem-proving.tex}
+\input{fundamental-tasks.tex}
+\input{pipeline-algorithm.tex}
+\input{proof.tex}
+\input{related-work.tex}
+\input{conclusion.tex}
+
+\bibliographystyle{splncs}
+\bibliography{bib}
+\end{document}

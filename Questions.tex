@@ -1,0 +1,63 @@
+1. How is your technique different from what others are doing
+2. Under what constraints would this algorithm not work - read his paper carefully
+3. Is there no way to prove this algorithm by theorem proving directly
+4. Difference bewteen function and loop pipelining
+5. Burch and Dill - and manolis - read their papers carefully.
+6. difference between ours and software pipelines
+7. difference betweeen ours and architectural pipelines
+8. read abt phi statements
+9. In what shape do we get information from a behavioral synthesis tool.
+10. what if a phi-statement prdouces undefined - what do you mean by that.
+11.  frame rule, like the one given below, captures the idea that, given a program c with precondition p that holds before it runs and postcondition q that holds afterward, some disjoint condition r should hold both before and after c runs.
+12. clock cycle Z
+13. hardware resources - shadow reg
+
+form factor
+transistor density
+how hand-crafted RTL worked initially
+equivalence checking
+
+
+Derek:
+---------------------------------------
+Ques 1:
+pg 11
+->correspondence
+->granularity ? - fine grained
+->orthogonality ? - code evolution
+
+Ques2:
+pg 13
+code file mark
+code anchor
+anchor is in both code and implementation, so which way do you go - which anchor you pick first? specification is english, so what do you mean by anchor in the implementation.
+
+Ques3:
+AST based anchor
+what if you change the name of the function, some misspelling or something then?
+
+Ques 4:
+pg 21
+why didn't they work? what were the problems? were there common problems?
+--------------------------------------------
+
+Zhenkun Yang
+-------------
+pg 6
+view this as a black box - transformation ?
+
+pg 8
+should put number on what is happening
+
+-?why would calling N functions in order create path explosion for you?
+
+-> what is they call each other? 
+
+-> pg 14
+replace bar(i) with (B, C) = BAR(i, A, C)
+
+-> pg16 why is t4 going along path?
+
+where they are different and make sure other statements remain same?
+
+what abt loop unrolling
