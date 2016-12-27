@@ -1,0 +1,69 @@
+\section{Introduction}
+\label{sec:intro}
+
+In recent years, the demand for hardware with smaller form factor and higher transistor density has been steadily increasing. Consequently, it has become difficult to create high quality hardware by hand-crafting RTL designs. A behavioral synthesis tool takes a behavioral
+design description (in C, C++, or SystemC), often referred to as Electronic System Level (ESL) design, and automatically generates an optimized RTL design (in hardware description languages such as VHDL or Verilog). 
+Studies have shown that ESL 
+reduces the design effort by $50\%$ or more while attaining
+excellent performance results~\cite{Moussa99}. 
+It has recently received significant attention, as the steady 
+increase in hardware complexity has made it increasingly 
+difficult to design high-quality designs through hand-crafted RTL under 
+aggressive time-to-market schedules.  A recent example is VP9 G2 hardware
+decoder IP developed by Google~\cite{googledecoder}, which has been implemented primarily in 
+standard C++ and synthesized to RTL logic for different target technologies 
+and performance points using Calypto's Calatpult High Level Synthesis 
+tool~\cite{catapult}. Nevertheless, and in spite of availability of several
+commercial behavioral synthesis tools~\cite{ctos,forte,vivado},
+the adoption of the approach in main-stream hardware development for
+microprocessor and SoC design companies is dependent on 
+designers' confidence that the synthesized RTL indeed corresponds to the ESL
+specification. 
+
+Loop pipelining is one of the most complex transformations in behavioral synthesis. It is available in most commercial synthesis tools ({\em e.g.}, AutoESL~\cite{autoesl} and Cynthesizer~\cite{forte}) and is
+crucial to producing hardware with high throughput and low latency by allowing temporal overlap of successive loop
+iterations. Certifying the correspondence between a sequential design and its pipelined counterpart is challenging due to the huge semantic gap between the two
+designs. As a result, hardware designers are vary of using current behavioral synthesis tools as
+they are often deemed either (a) aggressively optimized but error-prone or (b) 
+reliable but overly conservative, thus often producing circuits of poor quality
+or performance~\cite{spark,kundu2008}. Therefore, ensuring
+correctness of behaviorally synthesized pipeline designs
+is a critical issue in bringing behavioral synthesis into practice.
+
+An approach for certifying loop pipelining transformations using a combination of SEC and 
+theorem proving techniques has been proposed earlier~\cite{hrx:dac-12}. The most critical and complex
+component of this approach is developing
+a loop pipelining algorithm with two key properties: (1) it generates a reference pipeline model 
+by exploiting pipeline generation information from the synthesis flow (e.g., the iteration interval 
+of a generated pipeline) and the reference model can be compared with a pipelined RTL 
+implementation using SEC effectively, and (2) it can be mechanically verified to correctly preserve the semantics of
+sequential (non-pipelined) specification of loop execution. The viability of 
+this approach was shown by comparing pipeline generated from their algorithm with RTL implementation 
+using SEC. However, this algorithm was not certified as well as incomplete. Certification is a key component 
+without which correctness of behavioral synthesis process for pipelined designs cannot be claimed.
+Our work on developing a certified loop pipelining algorithm using our framework of certified 
+primitives is important to facilitating formal verification of behaviorally synthesized
+ pipeline designs.
+
+\medskip
+The key contributions of this paper are:
+\begin{enumerate}
+\item Identifying the key provable primitives essential in pipelining algorithms for behavioral synthesis and certifying these primitives in ACL2 theorem prover;
+\item Formalizing an invariant to link the sequential loop before pipelining with the pipelined loop;
+\item Developing our own executable loop pipelining algorithm in ACL2 using those primitives and certifying this algorithm using ACL2 theorem prover;
+\item Testing our certified loop pipelining algorithm on industrial-strength designs
+\end{enumerate}
+
+The remainder of this paper is organized as
+follows. Section~\ref{sec:background} provides background on the overall project and 
+explains the context of our theorem proving work. Section~\ref{sec:formalization} 
+discusses our formalization of the intermediate representations used in behavioral synthesis.
+We also discuss the correctness statement for loop pipelining algorithms. Section~\ref{sec:challenges} 
+discusses the research challenges.
+Section~\ref{sec:pipelining-algorithm} discusses our framework and a certified loop pipelining 
+algorithm we have developed using the framework. Section~\ref{sec:proof} provides a proof 
+sketch for our algorithm. Section~\ref{sec:SEC} provides evaluation of robustness and 
+scalability of our algorithm on industrial-strength designs. The related work is discussed in Section~\ref{chapter:related-work}.
+We then conclude and discuss future work in Section~\ref{sec:research-plan}.
+
+

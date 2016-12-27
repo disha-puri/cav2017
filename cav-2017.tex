@@ -12,6 +12,8 @@
 \usepackage{graphicx}
 \usepackage{url} 
 \usepackage{float}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{hyperref}
 
 \newcommand{\keywords}[1]{\par\addvspace\baselineskip
 \noindent\keywordname\enspace\ignorespaces#1}
@@ -24,6 +26,10 @@
 \usepackage{soul}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{url}
+\usepackage{natbib}
+\setlength{\bibsep}{4pt}
+
 \renewcommand{\labelitemi}{\tiny$\blacksquare$}
 
 \newlength\myindent
@@ -52,16 +58,17 @@
 NXP Semiconductors}
 
 \maketitle
-\input{abstract.tex}
-\input{introduction.tex}
-\input{background.tex}
-\input{no-theorem-proving.tex}
-\input{fundamental-tasks.tex}
-\input{pipeline-algorithm.tex}
-\input{proof.tex}
-\input{related-work.tex}
-\input{conclusion.tex}
+\input{0abstract.tex}
+\input{1introduction.tex}
+\input{2background.tex}
+\input{3formalization.tex}
+\input{4challenges.tex}
+\input{5pipelining-algorithm.tex}
+\input{6Proof.tex}
+\input{7SEC.tex}
+\input{8related-work.tex}
+\input{9conclusion.tex}
 
-\bibliographystyle{splncs}
+\bibliographystyle{plain}
 \bibliography{bib}
 \end{document}
