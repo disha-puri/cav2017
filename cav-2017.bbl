@@ -1,11 +1,5 @@
 \begin{thebibliography}{10}
 
-\bibitem{Aagaard2001}
-Mark~D. Aagaard, Byron Cook, Nancy~A. Day, and Robert~B. Jones.
-\newblock {\em A Framework for Microprocessor Correctness Statements}, pages
-  433--448.
-\newblock Springer Berlin Heidelberg, Berlin, Heidelberg, 2001.
-
 \bibitem{coq}
 Yves Bertot, Pierre Castéran, Gérard~(informaticien) Huet, and Christine
   Paulin-Mohring.
@@ -26,10 +20,6 @@ J.~R. Burch and D.~L. Dill.
 Cadence.
 \newblock {\em {C-to-Silicon Reference Manual}}, {2011}.
 
-\bibitem{catapult}
-Calypto.
-\newblock {\em Catapult Reference Manual}, 2014.
-
 \bibitem{legup}
 Andrew Canis, Jongsok Choi, Mark Aldham, Victor Zhang, Ahmed Kammoona, Tomasz
   Czajkowski, Stephen~D. Brown, and Jason~H. Anderson.
@@ -37,29 +27,6 @@ Andrew Canis, Jongsok Choi, Mark Aldham, Victor Zhang, Ahmed Kammoona, Tomasz
   processor/accelerator systems.
 \newblock {\em ACM Trans. Embed. Comput. Syst.}, 13(2):24:1--24:27, September
   2013.
-
-\bibitem{19}
-R.O Chapman.
-\newblock {\em Verified high-level synthesis}.
-\newblock PhD thesis, Portland State Univeristy, 1994.
-
-\bibitem{Clarke:2005}
-Edmund Clarke, Daniel Kroening, Natasha Sharygina, and Karen Yorav.
-\newblock Satabs: Sat-based predicate abstraction for ansi-c.
-\newblock In {\em Proceedings of the 11th International Conference on Tools and
-  Algorithms for the Construction and Analysis of Systems}, TACAS'05, pages
-  570--574, Berlin, Heidelberg, 2005. Springer-Verlag.
-
-\bibitem{Kroening1}
-Edmund~M. Clarke, Daniel Kroening, and Karen Yorav.
-\newblock Behavioral consistency of c and verilog programs using bounded model
-  checking.
-\newblock In {\em DAC}, pages 368--371. ACM, 2003.
-
-\bibitem{cohn}
-Avra Cohn.
-\newblock {\em The Notion of Proof in Hardware Verification}, pages 359--374.
-\newblock Springer Netherlands, Dordrecht, 1993.
 
 \bibitem{xpilot}
 J.~Cong, Y.~Fan, G.~Han, W.~Jiang, and Z.~Zhang.
@@ -73,16 +40,6 @@ David Cyrluk.
   example.
 \newblock Technical report, 1994.
 
-\bibitem{Russinoff}
-{DavidRussinoff and Matt Kaufmann and Eric Smith and Robert Sumners}.
-\newblock {Formal Verification of Floating-Point RTL at AMD Using the ACL2
-  Theorem Prover}, {2014}.
-
-\bibitem{Doshi:1999}
-Gautam Doshi.
-\newblock Understanding the {IA-64} architecture.
-\newblock Technical report, August 1999.
-
 \bibitem{vivado}
 Tom Feist.
 \newblock White paper: Vivado design suite.
@@ -92,22 +49,6 @@ Tom Feist.
 D.~Gajski, N.~D. Dutt, A.~Wu, and S.~Lin.
 \newblock {\em {High Level Synthesis: Introduction to Chip and System Design}}.
 \newblock Kluwer Academic Publishers, 1993.
-
-\bibitem{hol}
-M.~J.~C. Gordon and T.~F. Melham, editors.
-\newblock {\em Introduction to HOL: A Theorem Proving Environment for Higher
-  Order Logic}.
-\newblock Cambridge University Press, New York, NY, USA, 1993.
-
-\bibitem{23}
-Mike Gordon, Juliano Iyoda, Scott Owens, and Konrad Slind.
-\newblock Automatic formal synthesis of hardware from higher order logic.
-\newblock {\em Electron. Notes Theor. Comput. Sci.}, 145:27--43, January 2006.
-
-\bibitem{graham}
-Brian~T. Graham.
-\newblock {\em The SECD Microprocessor: A Verification Case Study}.
-\newblock Kluwer Academic Publishers, {Boston, MA}, 2012.
 
 \bibitem{hrx:dac-12}
 K.~Hao, S.~Ray, and F.~Xie.
@@ -127,91 +68,16 @@ Kecheng Hao.
 \newblock {\em Equivalence Checking for High-Assurance Behavioral Synthesis}.
 \newblock PhD thesis, Portland State Univeristy, 2013.
 
-\bibitem{Hardin}
-David~S. Hardin.
-\newblock {\em Design and Verification of Microprocessor Systems for
-  High-Assurance Applications}.
-\newblock Springer Publishing Company, Incorporated, 1st edition, 2010.
-
-\bibitem{Hennessy-2003}
-John~L. Hennessy and David~A. Patterson.
-\newblock {\em Computer Architecture: A Quantitative Approach}.
-\newblock Morgan Kaufmann Publishers Inc., San Francisco, CA, USA, 3 edition,
-  2003.
-
-\bibitem{22}
-C.~A.~R. Hoare.
-\newblock Communicating sequential processes.
-\newblock {\em Commun. ACM}, 21(8):666--677, August 1978.
-
-\bibitem{Hosabettu2000}
-Ravi~Mohan Hosabettu.
-\newblock {\em Systematic Verification of Pipelined Microprocessors}.
-\newblock PhD thesis, The University of Utah, 2000.
-
-\bibitem{hu}
-Alan Hu.
-\newblock High-level vs. rtl combinational equivalence: An introduction.
-\newblock In {\em ICCD}, pages 274--279. IEEE, 2006.
-
-\bibitem{Huggins1998}
-James~K. Huggins and David~Van Campenhout.
-\newblock Specification and verification of pipelining in the arm2 risc
-  microprocessor.
-\newblock {\em ACM Trans. Des. Autom. Electron. Syst.}, 3(4):563--580, October
-  1998.
-
 \bibitem{Moussa99}
 {I. Moussa and Z. Sugar and R. Suescun and A. A. Jerraya and M. Diaz-Nava and
   M. Pavesi and S. Crudo and L. Gazzi}.
 \newblock {Comparing RTL and Behavioral Design Methodologies in the Case of a
   2M Transistors ATM Shaper}, {1999}.
 
-\bibitem{Jacobi2002}
-Christian Jacobi.
-\newblock Formal verification of complex out-of-order pipelines by combining
-  model-checking and theorem-proving.
-\newblock 2404:309, 2002.
-
-\bibitem{21}
-Richard Johnson and Keshav Pingali.
-\newblock Dependence-based program analysis.
-\newblock In {\em In Proceedings of the SIGPLAN '93 Conference on Programming
-  Language Design and Implementation}, pages 78--89, 1993.
-
-\bibitem{llvm-phi-Jordans}
-Roel Jordans and Henk Corporaal.
-\newblock High-level software-pipelining in llvm.
-\newblock In {\em Proceedings of the 18th International Workshop on Software
-  and Compilers for Embedded Systems}, SCOPES '15, pages 97--100, New York, NY,
-  USA, 2015. ACM.
-
-\bibitem{34}
-Daher Kaiss, Silvian Goldenberg, and Zurab Khasidashvili.
-\newblock Seqver : {A} sequential equivalence verifier for hardware designs.
-\newblock In {\em 24th International Conference on Computer Design {(ICCD}
-  2006), 1-4 October 2006, San Jose, CA, {USA}}, pages 267--273, 2006.
-
-\bibitem{car2}
-M.~Kaufmann, P.~Manolios, and J~S. Moore.
-\newblock {\em Computer-Aided Reasoning: ACL2 Case Studies}.
-\newblock Kluwer Academic Publishers, {Boston, MA}, June 2000.
-
-\bibitem{car}
-M.~Kaufmann, P.~Manolios, and J~S. Moore.
-\newblock {\em Computer-Aided Reasoning: An Approach}.
-\newblock Kluwer Academic Publishers, {Boston, MA}, June 2000.
-
 \bibitem{kundu2008}
 Sudipta Kundu, Sorin Lerner, and Rajesh Gupta.
 \newblock {\em Validating High-Level Synthesis}, pages 459--472.
 \newblock Springer Berlin Heidelberg, Berlin, Heidelberg, 2008.
-
-\bibitem{Kundu:2009}
-Sudipta Kundu, Zachary Tatlock, and Sorin Lerner.
-\newblock Proving optimizations correct using parameterized program
-  equivalence.
-\newblock {\em SIGPLAN Not.}, 44(6):327--337, June 2009.
 
 \bibitem{llvm}
 C.~Lattner and V.~Adve.
@@ -220,40 +86,16 @@ C.~Lattner and V.~Adve.
 \newblock In {\em {Proceedings of the 2004 International Symposium on Code
   Generation and Optimization (CGO 2004)}}, pages 75--84, March 2004.
 
-\bibitem{Leviathan:2002}
-Raya Leviathan and Amir Pnueli.
-\newblock Validating software pipelining optimizations.
-\newblock In {\em Proceedings of the 2002 International Conference on
-  Compilers, Architecture, and Synthesis for Embedded Systems}, CASES '02,
-  pages 280--287, New York, NY, USA, 2002. ACM.
-
-\bibitem{levitt1997}
-Jeremy Levitt and Kunle Olukotun.
-\newblock Verifying correct pipeline implementation for microprocessors.
-\newblock In {\em Proceedings of the 1997 IEEE/ACM International Conference on
-  Computer-aided Design}, ICCAD '97, pages 162--169, Washington, DC, USA, 1997.
-  IEEE Computer Society.
+\bibitem{lin:survey-97}
+Youn-Long Lin.
+\newblock Recent developments in high-level synthesis.
+\newblock {\em ACM Trans. Des. Autom. Electron. Syst.}, 2(1):2--21, January
+  1997.
 
 \bibitem{liu}
 Hanbing Liu and J.~Strother Moore.
 \newblock Executable jvm model for analytical reasoning: a study.
 \newblock {\em Sci. Comput. Program.}, 57(3):253--274, September 2005.
-
-\bibitem{pm:pipelines}
-P.~Manolios.
-\newblock {Correctness of Pipelined Machines}.
-\newblock In W.~A. Hunt, Jr. and S.~D. Johnson, editors, {\em {Proceedings of
-  the $3$rd International Conference on Formal Methods in Computer-Aided Design
-  (FMCAD 2000)}}, volume 1954 of {\em LNCS}, pages 161--178, Austin, TX, 2000.
-  {Springer-Verlag}.
-
-\bibitem{Matsumoto}
-Takeshi Matsumoto, Hiroshi Saito, and Masahiro Fujita.
-\newblock Equivalence checking of c programs by locally performing symbolic
-  simulation on dependence graphs.
-\newblock In {\em Proceedings of the 7th International Symposium on Quality
-  Electronic Design}, ISQED '06, pages 370--375, Washington, DC, USA, 2006.
-  IEEE Computer Society.
 
 \bibitem{McCarthy}
 John McCarthy.
@@ -282,13 +124,6 @@ D.~Puri, S.~Ray, K.~Hao, and F.~Xie.
   Conference on Interactive Theorem Proving (ITP 2014)}, volume 7998 of {\em
   LNCS}. Springer, 2014.
 
-\bibitem{ray-abstracting}
-S.~Ray and J.~Bhadra.
-\newblock {Abstracting and Verifying Flash Memories}.
-\newblock In K.~Campbell, editor, {\em {Proceedings of the $9$th Non-Volatile
-  Memory Technology Symposium (NVMTS 2008)}}, pages 100--104, {Pacific Grove,
-  CA}, November 2008. IEEE.
-
 \bibitem{rhcxy:atva-09}
 S.~Ray, K.~Hao, F.~Xie, and J.~Yang.
 \newblock {Formal Verification for High-Assurance Behavioral Synthesis}.
@@ -297,45 +132,11 @@ S.~Ray, K.~Hao, F.~Xie, and J.~Yang.
   (ATVA 2009)}}, volume 5799 of {\em LNCS}, pages 337--351, {Macao SAR, China},
   October 2009. Springer.
 
-\bibitem{ray-certification}
-S.~Ray and W.~A. Hunt, Jr.
-\newblock {Mechanized Certification of Secure Hardware Designs}.
-\newblock In M.~S. Abadir, L.~Wang, and J.~Bhadra, editors, {\em {Proceedings
-  of the 8th International Workshop on Microprocessor Test and Verification,
-  Common Challenges and Solutions (MTV 2007)}}, pages 25--32, {Austin, TX},
-  December 2007. IEEE Computer Society.
-
-\bibitem{ray-connecting}
-S.~Ray and W.~A. Hunt, Jr.
-\newblock {Connecting Pre-Silicon and Post-silicon Verification}.
-\newblock In A.~Biere and C.~Pixley, editors, {\em {Proceedings of the $9$th
-  International Conference on Formal Methods in Computer-Aided Design (FMCAD
-  2009)}}, pages 160--163, {Austin, TX}, November 2009. IEEE Computer Society.
-
-\bibitem{33}
-Hamid Savoj, David Berthelot, Alan Mishchenko, and Robert Brayton.
-\newblock Combinational techniques for sequential equivalence checking.
-\newblock In {\em Proceedings of the 2010 Conference on Formal Methods in
-  Computer-Aided Design}, FMCAD '10, pages 145--150, Austin, TX, 2010. FMCAD
-  Inc.
-
 \bibitem{sh:pipeline}
 J.~Sawada and W.~A. Hunt, Jr.
 \newblock {Verification of FM9801: An Out-of-Order Microprocessor Model with
   Speculative Execution, Exceptions, and Program-Modifying Capability}.
 \newblock {\em Formal Methods in Systems Design (FMSD)}, 20(2):187--222, 2002.
-
-\bibitem{24}
-Klaus Schneider.
-\newblock {\em A Verified Hardware Synthesis of Esterel Programs}, pages
-  205--214.
-\newblock Springer US, Boston, MA, 2001.
-
-\bibitem{sud-2010}
-Sudarshan~K. Srinivasan.
-\newblock Automatic refinement checking of pipelines with out-of-order
-  execution.
-\newblock {\em IEEE Transactions on Computers}, 59(undefined):1138--1144, 2010.
 
 \bibitem{tl:software-popl10}
 J.~Tristan and X.~Leroy.
@@ -343,27 +144,6 @@ J.~Tristan and X.~Leroy.
 \newblock In M.~V. Hemenegildo and J.~Palsberg, editors, {\em {Proceedings of
   the $37$th ACM SIGPLAN-SIGACT Symposium on Principles of Programming
   Languages (POPL 2010)}}, pages 83--92, January 2010.
-
-\bibitem{velev05}
-M.~N. Velev and R.~E. Bryant.
-\newblock {TLSim and EVC}: A term-level symbolic simulator and an efficient
-  decision procedure for the logic of equality with uninterpreted functions and
-  memories.
-\newblock {\em International Journal on Embedded Systems}, pages 134--149,
-  2005.
-
-\bibitem{Velev2000}
-Miroslav~N. Velev.
-\newblock {\em Formal Verification of VLIW Microprocessors with Speculative
-  Execution}, pages 296--311.
-\newblock Springer Berlin Heidelberg, Berlin, Heidelberg, 2000.
-
-\bibitem{VelevBryant2000}
-Miroslav~N. Velev and Randal~E. Bryant.
-\newblock Formal verification of superscale microprocessors with multicycle
-  functional units, exception, and branch prediction.
-\newblock In {\em Proceedings of the 37th Annual Design Automation Conference},
-  DAC '00, pages 112--117, New York, NY, USA, 2000. ACM.
 
 \bibitem{googledecoder}
 {VP9 Video Hardware RTL}.
@@ -375,36 +155,11 @@ Miroslav~N. Velev and Randal~E. Bryant.
 Xilinx.
 \newblock {\em AutoESL Reference Manual}, 2011.
 
-\bibitem{36}
-Jin Yang and Carl-Johan~H. Seger.
-\newblock Introduction to generalized symbolic trajectory evaluation.
-\newblock In {\em ICCD}, pages 360--367. IEEE Computer Society, 2001.
-
 \bibitem{zhenkun:iccd-13}
 Z.~Yang, K.~Hao, K.~Cong, F.~Xie, and S.~Ray.
 \newblock {Equivalence Checking for Compiler Transformations in Behavioral
   Synthesis}.
 \newblock In {\em {$31$st International Conference on Computer Design (ICCD
   2013)}}, pages 491--494, 2013.
-
-\bibitem{zhenkun3}
-Zhenkun Yang, Kecheng Hao, Kai Cong, Li~Lei, Sandip Ray, and Fei Xie.
-\newblock Scalable certification framework for behavioral synthesis front-end.
-\newblock In {\em The 51st Annual Design Automation Conference 2014, {DAC} '14,
-  San Francisco, CA, USA, June 1-5, 2014}, pages 149:1--149:6, 2014.
-
-\bibitem{zhenkun2}
-Zhenkun Yang, Kecheng Hao, Kai Cong, Li~Lei, Sandip Ray, and Fei Xie.
-\newblock Validating scheduling transformation for behavioral synthesis.
-\newblock In {\em 2016 Design, Automation {\&} Test in Europe Conference {\&}
-  Exhibition, {DATE} 2016, Dresden, Germany, March 14-18, 2016}, pages
-  1652--1657, 2016.
-
-\bibitem{Yang2013}
-Zhenkun Yang, Sandip Ray, Kecheng Hao, and Fei Xie.
-\newblock Handling design and implementation optimizations in equivalence
-  checking for behavioral synthesis.
-\newblock In {\em Proceedings of the 50th Annual Design Automation Conference},
-  DAC '13, pages 117:1--117:6, New York, NY, USA, 2013. ACM.
 
 \end{thebibliography}

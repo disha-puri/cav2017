@@ -9,11 +9,7 @@ excellent performance results~\cite{Moussa99}.
 It has recently received significant attention, as the steady 
 increase in hardware complexity has made it increasingly 
 difficult to design high-quality designs through hand-crafted RTL under 
-aggressive time-to-market schedules.  A recent example is VP9 G2 hardware
-decoder IP developed by Google~\cite{googledecoder}, which has been implemented primarily in 
-standard C++ and synthesized to RTL logic for different target technologies 
-and performance points using Calypto's Calatpult High Level Synthesis 
-tool~\cite{catapult}. Nevertheless, and in spite of availability of several
+aggressive time-to-market schedules~\cite{googledecoder}. Nevertheless, and in spite of availability of several
 commercial behavioral synthesis tools~\cite{ctos,forte,vivado},
 the adoption of the approach in main-stream hardware development for
 microprocessor and SoC design companies is dependent on 
@@ -55,15 +51,11 @@ The key contributions of this paper are:
 \end{enumerate}
 
 The remainder of this paper is organized as
-follows. Section~\ref{sec:background} provides background on the overall project and 
-explains the context of our theorem proving work. Section~\ref{sec:formalization} 
+follows. Section~\ref{sec:background} provides background on the need for a certified loop pipelining algorithm 
+to certify behaviorally synthesized designs. Section~\ref{sec:formalization} 
 discusses our formalization of the intermediate representations used in behavioral synthesis.
-We also discuss the correctness statement for loop pipelining algorithms. Section~\ref{sec:challenges} 
-discusses the research challenges.
-Section~\ref{sec:pipelining-algorithm} discusses our framework and a certified loop pipelining 
-algorithm we have developed using the framework. Section~\ref{sec:proof} provides a proof 
-sketch for our algorithm. Section~\ref{sec:SEC} provides evaluation of robustness and 
-scalability of our algorithm on industrial-strength designs. The related work is discussed in Section~\ref{chapter:related-work}.
-We then conclude and discuss future work in Section~\ref{sec:research-plan}.
+We also discuss the correctness statement for loop pipelining algorithms. 
+We discuss our framework and a certified loop pipelining algorithm we have developed using the framework in Section~\ref{sec:pipelining-algorithm}. Section~\ref{sec:proof} provides a proof sketch for our algorithm and Section~\ref{sec:SEC} provides evaluation of robustness and 
+scalability of our algorithm on industrial-strength designs. Section~\ref{sec:related-work} discusses the work that has been done in the area of microprocessor and software pipeline verification before and how our work is different. We then conclude and discuss future work in Section~\ref{sec:research-plan}.
 
 
