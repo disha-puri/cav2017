@@ -5,10 +5,9 @@ Behavioral Synthesis is the process of compiling an Electronic System Level (ESL
 Loop pipelining is a critical transformation in this process, which improves
 the throughput and reduces the latency of the synthesized hardware. It is
 complex and error-prone, and a small bug can result in faulty hardware with expensive
-ramifications. Therefore, it is critical to certify the loop pipelining transformation
-so that designers can trust the behavioral synthesis process.
+ramifications. Therefore, it is critical to certify so that designers can trust the behavioral synthesis process.
 Certifying a loop pipelining transformation is however, a major research challenge
-because there is a huge semantic gap between the input sequential design and the output
+as there is a huge semantic gap between the input sequential design and the output
 pipelined implementation, making it infeasible to verify their equivalence with automated sequential equivalence
 checking (SEC) techniques.
 
@@ -20,8 +19,10 @@ and this reference model. A key and arguably, the most complex component of this
 approach is development of the certified
 loop pipelining algorithm. We propose a framework of certified pipelining primitives which we show
 are essential for designing pipelining algorithms. Using our framework, we build
-a certified loop pipelining algorithm. We also propose a key invariant in certifying this algorithm, which links sequential loops
-with their pipelined counterparts. This is unlike other invariants that have been used in pipeline proofs. This certified algorithm is essential in the overall approach to certify
+a certified loop pipelining algorithm. 
+%We also propose a key invariant in certifying this algorithm, which links sequential loops
+%with their pipelined counterparts. This is unlike other invariants that have been used in pipeline proofs. 
+This certified algorithm is essential in the overall approach to certify
 behaviorally synthesized pipelined designs. We test the scalability and robustness of our algorithm on industrial-strength ESL designs that result in tens of thousands of lines of RTL implementations.
      
 \end{abstract}

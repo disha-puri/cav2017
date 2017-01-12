@@ -1,28 +1,7 @@
 \section{Background and Context}
 \label{sec:background}
 
-Behavioral synthesis~\cite{lin:survey-97} is an automated compilation process where a behavioral synthesis tool ~\cite{spark,xpilot,legup}  takes an ESL description, together with a library of hardware resources. Analogous to a regular compiler,
-the tool performs the standard lexical and syntax analysis to generate an intermediate representation (IR). The IR is then subjected to a number of
-transformations which can be categorized into three phases as shown in Figure~\ref{fig:certification-framework}.
-
- \begin{enumerate}
-\item {\bf Compiler Transformations:} These include typical
-  compiler operations, {\em e.g.,} dead-code elimination,
-  constant propagation etc. 
-\item {\bf Scheduling Transformations:} Scheduling entails
-  computing for each operation the clock cycle of its
-  execution, accounting for hardware resource constraints
-  and control/data dependencies.  Loop pipelining is a component 
-  of this phase.
-\item {\bf Resource Allocation and Control Synthesis:} This phase
-  involves mapping a hardware resource to each operation, allocating
-  registers to variables, and generating a controlling finite-state
-  machine to implement the schedule.
-\end{enumerate}
-After the three phases above, the design can be expressed in
-RTL which goes through further optimizations. 
-
-\begin{figure}[t!]
+\begin{figure}
 \begin{center}
 \begin{tabular}{c}
 \includegraphics[height=2in]{fig-proposal/certification-framework}
@@ -32,18 +11,34 @@ RTL which goes through further optimizations.
 \label{fig:certification-framework}
 \end{figure}
 
+Behavioral synthesis~\cite{lin:survey-97} is an automated compilation process where a behavioral synthesis tool ~\cite{spark,xpilot,legup}  takes an ESL description, together with a library of hardware resources. Analogous to a regular compiler,
+the tool performs the standard lexical and syntax analysis to generate an intermediate representation (IR). The IR is then subjected to a number of
+transformations which can be categorized into following three phases (refer Figure~\ref{fig:certification-framework}). After that, the design can be expressed in
+RTL which goes through further optimizations
+
+ \begin{enumerate}
+\item {\bf Compiler Transformations:} These include typical
+  compiler operations, {\em e.g.,} dead-code elimination,
+  constant propagation etc. 
+\item {\bf Scheduling Transformations:} Scheduling entails
+  computing the clock cycle for executing each operation 
+  accounting for hardware constraints
+  and control/data dependencies.  This phase includes loop pipelining.
+\item {\bf Resource Allocation and Control Synthesis:} This phase
+  involves mapping a hardware resource to each operation, allocating
+  registers to variables, and generating a controlling finite-state
+  machine to implement the schedule.
+\end{enumerate}. 
+
 There is a large gap in abstraction
 between the ESL and RTL descriptions so that there is little
 correspondence in internal variables between the two.  Consequently,
-direct SEC between the two reduces to cost-prohibitive computation of
-input-output equivalence. Applying theorem proving
-is also troublesome since extensive manual effort is necessary and
-this effort needs to be replicated for each different synthesized
-design. It is also infeasible to
+direct SEC is not feasible as it reduces to cost-prohibitive computation of
+input-output equivalence. Theorem proving is impractical as it requires extensive manual effort 
+which needs to be replicated for each different synthesized
+design. Besides reasons of complexity, it is also not possible to
 directly certify the implementation of the {\em synthesis tool} via
-theorem proving.  In addition to being highly complex and thus
-potentially requiring prohibitive effort to formally verify with any
-theorem prover, the implementations are typically closed-source and
+theorem proving as the implementations are typically closed-source and
 closely guarded by EDA vendors and thus out of reach of external
 automated reasoning communities.
 
@@ -69,7 +64,7 @@ to eliminate. Thus a specialized approach is warranted for
 handling its certification.
 
 Hao {\em et al.} proposed a pipeline generation algorithm using feedback (like pipeline interval) from the synthesis tool~\cite{hrx:dac-12}. 
-They show that to verify the correspondence between sequential CCDFG and pipelined RTL, it is sufficient to perform the following three steps. 
+They show that to verify the correspondence between sequential CCDFG and pipelined RTL, it is sufficient to
 \begin{enumerate} 
 \item Check that the algorithm can generate a pipeline reference model for the parameters reported by synthesis.
 \item Use SEC to compare the pipeline reference model with the synthesized RTL.
@@ -90,7 +85,7 @@ interaction, resulting in the proverbial euphemism of proofs
 of programs being orders of magnitude more complex than the
 programs themselves~\cite{liu}.
 
-In our work, however, we can ``get away'' without verifying
+However, we can ``get away'' without verifying
 the specific implementation while still being able to
 certify the design generated by behavioral synthesis without
 loss of fidelity. The key observation, as above, is that it
@@ -100,15 +95,15 @@ implementation which can be effectively applied with SEC.
 In particular, any certifiable algorithm that has the same
 input-output characteristic as the proposed algorithm
 is sufficient.  Thus, our work is on identifying
-certifiable primitives and invariants of a loop pipelining
+certifiable primitives of a loop pipelining
 transformation and developing a pipeline generation
 algorithm using those primitives, achieving the dual goal of
 mechanical reasoning of the algorithm and amenability of the
-resulting reference model to SEC.
-
-Note that our framework is independent of the inner workings of a specific tool, 
-and can be applied to certify designs synthesized by different tools from a broad 
-class of ESL descriptions. Also, the approach produces a certified reference flow, 
+resulting reference model to SEC. Our framework is independent of the inner workings of a specific tool, 
+and can be applied to certify designs synthesized by different tools 
+%from a broad 
+%class of ESL descriptions. 
+Also, the approach produces a certified reference flow, 
 which makes explicit generic invariants that must be preserved by different transformations. 
 
 

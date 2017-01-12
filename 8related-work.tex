@@ -2,10 +2,10 @@
 \label{sec:related-work}
 
 Besides behaviorally synthesized pipelines, there are mainly two other kinds of pipelines, hardware pipelines and software pipelines. 
-There has been a significant amount of work in verification of hardware pipelines~\cite{pvs,Cyrluk94, bd:pipeline, sh:pipeline}. 
-There are significant differences in goals
-and techniques between these efforts and ours.
-Microprocessor pipelines include optimized (hand-crafted)
+%There has been a significant amount of work in verification of hardware pipelines
+%There are significant differences in goals
+%and techniques between these efforts and ours.
+Microprocessor pipelines~\cite{pvs,Cyrluk94, bd:pipeline, sh:pipeline} include optimized (hand-crafted)
 control and forwarding logics, but have a static set of
 operations based on the instruction set. Behaviorally synthesized 
 loop pipelines tend to be deep with a high complexity at each stage, but
@@ -21,8 +21,8 @@ requirement from a pipeline invariant, \viz, hazard freedom,
 is left implicit and arises indirectly as a proof obligation
 for invariance of this predicate. 
  
-Behaviorally synthesized loop pipelines are similar in reasoning to software loop pipelines except that since
-behavioral synthesis is automatic, it is much more streamlined than software pipelines. 
+%Behaviorally synthesized loop pipelines are similar in reasoning to software loop pipelines except that since
+%behavioral synthesis is automatic, it is much more streamlined than software pipelines. 
 Our understanding of hazards and reasoning behind pipelining algorithm 
 is very closely related to verification of software pipelines.  In particular, Tristan
 and Leroy~\cite{tl:software-popl10} present a verified
@@ -113,7 +113,6 @@ making traditional program verification techniques unusable.
 Our approach shows a novel way in which theorem
 proving can be applied even under those constraints, in
 concert with automated SEC.
-\end{comment}
 
 In addition to technical contributions, we see our work as
 providing an important methodological contribution enabling
@@ -139,3 +138,4 @@ to facilitate proof of key structural lemmas of the
 invariant before settling on the final version.  We believe similar approach is applicable in
 other contexts and may provide effective use of theorem
 proving within industrial verification flows.
+\end{comment}

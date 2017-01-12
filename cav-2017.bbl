@@ -68,12 +68,6 @@ Kecheng Hao.
 \newblock {\em Equivalence Checking for High-Assurance Behavioral Synthesis}.
 \newblock PhD thesis, Portland State Univeristy, 2013.
 
-\bibitem{Moussa99}
-{I. Moussa and Z. Sugar and R. Suescun and A. A. Jerraya and M. Diaz-Nava and
-  M. Pavesi and S. Crudo and L. Gazzi}.
-\newblock {Comparing RTL and Behavioral Design Methodologies in the Case of a
-  2M Transistors ATM Shaper}, {1999}.
-
 \bibitem{kundu2008}
 Sudipta Kundu, Sorin Lerner, and Rajesh Gupta.
 \newblock {\em Validating High-Level Synthesis}, pages 459--472.

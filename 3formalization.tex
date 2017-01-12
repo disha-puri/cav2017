@@ -15,27 +15,26 @@ The semantics of CCDFG require a formalization of the
 underlying language used to represent the individual
 instructions in a scheduling step.  The underlying language we use
 is the LLVM language~\cite{llvm}. LLVM is a popular compiler
-infrastructure for many behavioral synthesis tools
-({\em e.g.}, AutoESL~\cite{autoesl}, xPilot~\cite{xpilot}).  We provide semantics to these
+infrastructure for many behavioral synthesis tools~\cite{autoesl,xpilot}.
+%({\em e.g.}, AutoESL~\cite{autoesl}, xPilot~\cite{xpilot}).  
+We provide semantics to these
 instructions through a standard, state-based operational
 formalization~\cite{McCarthy}. It includes assignment,
 load, store, bounded arithmetic, bit vectors, arrays, and
 pointer manipulation instructions. Executing a microstep in
 a CCDFG implies changing the current state of CCDFG based on
 meaning of the instructions in the microstep and producing a
-new state. Assigning meanings to most instructions is
-standard; one exception is the so-called ``$\phi$-construct''. A $\phi$-construct is a list of $\phi$-statements. A $\phi$-statement is $v := \phi [\sigma, X] [\tau, Y]$, where $v$ is a variable, $\sigma$
-and $\tau$ are expressions, and $X$ and $Y$ are
-scheduling steps: if it is reached from $X$ then it is the
-same as the assignment statement $v := \sigma$; if
-reached from $Y$, it is the same as $v := \tau$; the meaning is undefined otherwise. $\phi$-constructs are necessary due to the structure of the SSA (static single
-assignment) form of the LLVM code.
+new state. %Assigning meanings to most instructions is
+%standard; one exception is the so-called ``$\phi$-construct''. A $\phi$-construct is a list of $\phi$-statements. A $\phi$-statement is $v := \phi [\sigma, X] [\tau, Y]$, where $v$ is a variable, $\sigma$
+%and $\tau$ are expressions, and $X$ and $Y$ are
+%scheduling steps: if it is reached from $X$ then it is the
+%same as the assignment statement $v := \sigma$; if
+%reached from $Y$, it is the same as $v := \tau$; the meaning is undefined otherwise. $\phi$-constructs are necessary due to the structure of the SSA (static single
+%assignment) form of the LLVM code.
 
 \subsection{Loop Pipelining Transformation}
 \label{subsec:loop-pipelining-trans}
-A behavioral synthesis tool automatically generates a RTL design from an ESL design through a series of
-transformations. Pipelining a loop is a critical
-transformation in behavioral synthesis. For our purposes,
+For our purposes,
 {\em pipelinable loop} is a loop with the following additional restrictions~\cite{hrx:dac-12}:
 \begin{enumerate}
 \item no nested loop;
@@ -87,7 +86,7 @@ Behavioral synthesis tools use complicated heuristics and aggressive scheduling 
 \subsection{Correctness of Pipelined CCDFG}
 \label{subsec:correctness-defn}
 
-Loop Pipelining is a critical and complex transformation. So, it is important to certify that the pipelined CCDFG is indeed correct. Correctness of loop pipelining can be informally stated as below.
+Correctness of loop pipelining can be informally stated as below.
 
 \begin{quote}
 Let $L$ be a loop in CCDFG $C$, and let $L_{\alpha}$ be the

@@ -35,7 +35,7 @@ loop body is executed the first time. One of the key steps in loop pipelining is
 therefore, $\phi$-elimination {\em i.e.}, replacing
 $\phi$-statement with appropriate assignment statements when the previous basic block is known.
 
-{\textbf {Shadow register primitive}} -- We define a shadow register microstep as simply an assignment
+{\textbf {Shadow register primitive}} -- We define a shadow register microstep as an assignment
 statement with symbol expression ($x$) assigned to a new value ($x\_reg$). We call all the new introduced 
 variables as shadow registers. Intuitively, it is correct that in a sequence of steps, if we assign a variable 
 to a shadow register and replace all occurences of $x$ with $x\_reg$
@@ -71,12 +71,12 @@ $S_{preExit}$. Similarly,
 the primitive also allows us to introduce an exit conditional branch by replacing
 $S_{loop}$ followed by $S_{preExit}$ with $S$.
 Note that since $k$ can take any value $k \ge 0$, we are not compromising on the correctness statement.  
-It can be proved that executing $S$ $k$ times such that it exits in the $(k+1)$ st
+It can be proved that executing $S$ such that it exits in the $(k+1)$ st
 iteration is same as executing $S_{loop}$ $k$ times followed by $S_{preExit}$.
 
-{\textbf {Interchange primitive}} -- Let $m$ and $n$ be two adjacent scheduling steps (or in general, any collection of microsteps) in a CCDFG where both $m$ and $n$ do not have any microsteps containing branch statements. Also, there are no read write hazards between $m$ and $n$. Then, the interchange primitive allows us to interchange the order of $m$ and $n$ in the given CCDFG without affecting execution. 
+{\textbf {Interchange primitive}} -- Let $m$ and $n$ be two adjacent scheduling steps (or collection of microsteps) in a CCDFG where both $m$ and $n$ do not have read hazards and any microsteps containing branch statements. Then, the interchange primitive allows us to interchange their order without affecting execution. 
 
-{\textbf {Superstep construction primitive}} -- This operation entails combining the scheduling steps of the successive
+{\textbf {Superstep construction primitive}} -- This entails combining the scheduling steps of the successive
 iterations, forming scheduling ``supersteps'' that act as scheduling steps for the pipelined implementation. Supersteps must
 account for read-after-write hazards, i.e, if a variable is written in a scheduling step $X$ and read subsequently in
 $Z$ then $Z$ cannot be in a superstep that precedes $X$ in the control/data flow.  Note that we implement data
@@ -84,7 +84,7 @@ forwarding (forward value of data within a single clock cycle); thus $X$ and $Z$
 
 \subsection{Our Loop Pipelining Algorithm}
 
-Given a sequential loop $S$ in CCDFG $C$ and pipeline interval $I$, we can create a pipelined loop $P$ using Algorithm~\ref{algo:loop}. Note that every step of the algorithm is build from ground up using our framework of provable primitives such that the algorithm can be certified by theorem proving. A quick overview of primitives used in the algorithm at each step are shown in Figure~\ref{fig:algorithm-using-primitives}.
+Given a sequential loop $S$ in CCDFG $C$ and pipeline interval $I$, we can create a pipelined loop $P$ using Algorithm~\ref{algo:loop}. Note that every step of the algorithm is build from ground up using our framework of provable primitives such that the algorithm can be certified by theorem proving (c.f. Figure~\ref{fig:branch-primitive} (b)). 
 
 \begin{algorithm}[H]
 \caption{Pipelining Algorithm}
@@ -103,12 +103,11 @@ Given a sequential loop $S$ in CCDFG $C$ and pipeline interval $I$, we can creat
 \end{algorithmic}
 \end{algorithm}
 
-Now, we describe the steps to convert a sequential loop CCDFG (c.f. Figure~\ref{fig:branch-primitive}) to a pipelined loop CCDFG:
+Now, we describe the steps to convert a sequential loop CCDFG $S$ (c.f. Figure~\ref{fig:branch-primitive}) to a pipelined loop CCDFG:
 
-{\bf Remove Branches}: We apply the branch primitive on $S$ (c.f. Figure~\ref{fig:branch-primitive}) to remove branches by explicitly defining the control flow in $S$. 
+{\bf Remove Branches}: We apply the branch primitive on $S$ to remove branches by explicitly defining the control flow. 
 
-{\bf Unroll Loop Once}: The first iteration behaves differently than the rest of the
-iterations due to $\phi$-construct. So, we simply unroll the loop $S_{loop}$ once and call the first iteration $S_{pre}$. 
+{\bf Unroll Loop Once}: The first iteration behaves differently than the rest due to $\phi$-construct. So, we unroll the loop $S_{loop}$ once and call it $S_{pre}$. 
 
 {\bf $\phi$-elimination}: We apply the $\phi$-elimination primitive on $S_{pre}$, $S_{loop}$ and $S_{preExit}$ to return a CCDFG in which all the $\phi$-statements have been replaced with their corresponding assignment statements. 
 
@@ -196,6 +195,6 @@ overwritten before being read, which means these are the variables that require 
 implementation. A scheduling step is allowed to move up another scheduling step only if there are no intermediate read and write conflicts. Note that we implement data forwarding; thus $s$ and $s'$ can be in a single scheduling superstep.
 Superstep construction on $S_{pre}$ and $S_{loop}$ creates a CCDFG with three parts: prologue $P_{pre}$, $P_{loop}$ which is the full pipeline stage and epilogue $P_{post}$ as shown in Figure~\ref{fig:algo3-2}. 
 
-{\bf Add Branches:}  To add the branches back, we use the a combination of interchange primitive and reverse of Branch primitive. Note in Figure~\ref{fig:algo3-2}, if there are no read write hazards in between the last scheduling step $Z$ of $P_{post}$ and $S_{preExit}$, we can interchange them using interchange primtive. Now recall from the branch primitive that if there is a loop structure $S_{loop}$ with a conditional branch, then executing $S_{loop}$ such that it exits in the (k+1)st iteration is same as executing $S_{loop}$ without the conditional branch followed by only those steps from $S_{loop}$ which occur before the branch $S_{preExit}$. Now, we apply the reverse of branch primitive here. $P_{loop}$ in Figure~\ref{fig:algo3-2} is a loop structure without a conditional branch, followed by a collection of microsteps $P_{preExit}$ (here, a collection of $Z$, $Y$ and $S_{preExit}$). Then, we can add an exit conditional branch in $P_{loop}$ after the microsteps $P_{preExit}$. This branch points to the next scheduling step after the loop $P_{post}$ if the exit condition is true. We can add the conditional and the unconditional branch as shown in  Figure~\ref{fig:algo4}.  
+{\bf Add Branches:}  To add the branches back, we use the a combination of interchange primitive and reverse of Branch primitive. Note in Figure~\ref{fig:algo3-2}, if there are no read write hazards in between the last scheduling step $Z$ of $P_{post}$ and $S_{preExit}$, we can interchange them using interchange primtive. Now recall from the branch primitive that if there is a loop structure $S_{loop}$ with a conditional branch, then executing $S_{loop}$ such that it exits in the (k+1)st iteration is same as executing $S_{loop}$ without the conditional branch followed by only those steps from $S_{loop}$ which occur before the branch $S_{preExit}$. Now, we apply the reverse of branch primitive here. $P_{loop}$ in Figure~\ref{fig:algo3-2} is a loop structure without a conditional branch, followed by a collection of microsteps $P_{preExit}$ (here, a collection of $Z$, $Y$ and $S_{preExit}$). Then, we can add an exit conditional branch in $P_{loop}$ after the microsteps $P_{preExit}$. This branch points to the next scheduling step after the loop $P_{post}$ if the exit condition is true. We can add the conditional and the unconditional branch as shown in  Figure~\ref{fig:algo3-2}(b).  
 
 We now have the final pipelined loop structure. We describe a proof sketch for the primitives and the algorithm in the next section.

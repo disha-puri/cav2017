@@ -7,47 +7,37 @@ Certification of our loop pipelining algorithm naturally requires a certificatio
 We must prove that applying a particular primitive is correct, 
 {\em i.e.}, maintaining a certain invariant. This is proven without
 considering how it is applied in the context of a pipeline
-synthesis algorithm. We give an outline of the proof to justify 
-that the primitives are correct.
-
-{\bf $\phi$-elimination primitive:} We prove that the algorithm correctly resolves the $\phi$ to create multiple assignment statements. We induct along the length of each sub-microstep of $\phi$-construct and
-relate it to one corresponding assignment statement.
-
-{\bf Shadow register primitive:} We prove that adding
-  a shadow register microstep, $a\_reg = a'$ does not change the value of any variable in 
-  the state except the shadow variable. In essence, we prove
-  that if a variable is not written in a microstep, then its value in the state before and after executing
-  that microstep is same. Also, we prove that after executing the shadow register microstep,
-  value of $a\_reg$ in the state is equal to value of $a'$. Furthermore, since now
-  the value of $a\_reg$ is equal to value
-  of $a'$, we prove that executing a statement which reads $a'$ has the same
-  effect on the state as executing a statement which reads
-  $a\_reg$ till the next write of $a'$. This needs to be done for all types of
+synthesis algorithm. In {\em $\phi$-elimination primitive}, we prove that the algorithm 
+correctly resolves the $\phi$ to create multiple assignment statements. 
+We induct along the length of each sub-microstep of $\phi$-construct and
+relate it to one corresponding assignment statement. 
+In {\em Shadow register primitive}, we prove that adding a shadow register microstep, $a\_reg = a'$ 
+does not change the value of any variable in the state except the shadow variable. In essence, we prove
+that if a variable is not written in a microstep, then its value in the state before and after executing
+that microstep is same. Also, we prove that after executing the shadow register microstep,
+value of $a\_reg$ in the state is equal to value of $a'$. Furthermore, since now
+the value of $a\_reg$ is equal to value of $a'$, we prove that executing a statement which reads $a'$ has the same
+effect on the state as executing a statement which reads $a\_reg$ till the next write of $a'$. This needs to be done for all types of
   statements {\em e.g.,} assignment statements (with different types of 
   operations like load, add, mul, getelementptr {\em e.t.c.}), 
   store statement, branch statement etc. We determine the variables read and 
   written in a statement by analyzing the statements. 
   Note that $a\_reg$ is a new variable which
-  is neither written nor read in the given statements.
-
-  {\bf Interchange primitive:} We prove that we can interchange any two adjacent microsteps
- (excluding branch microsteps) which do not have read-write conflict. Reasoning about read and
-  write of statements involves reasoning about execution
+  is neither written nor read in the given statements. In {\em Interchange primitive}, we prove 
+  that we can interchange any two adjacent microsteps
+ (excluding branch microsteps) which do not have read-write conflict by reasoning about execution
   semantics of all types of microsteps present in the
-  language which is not trivial.
-
-{\bf Branch primitive:} We prove that executing $S$ $k$ times such that it exits 
+  language. In {\em Branch primitive}, we prove that executing $S$ such that it exits 
 in the $(k+1)$ st iteration is same as executing $S_{loop}$ $k$ times followed by $S_{preExit}$. 
 We need to define a notion of a well-formed-flow to ensure that we can show that the 
 branch does not exit in the first $k$ iterations. We also need to track the backedge along the 
 unconditional branch and ensure that it points back to the beginning of loop $S$.
- 
-{\bf Superstep construction primitive:} This primitive is for overlapping iterations while 
+ {\em Superstep construction primitive} is for overlapping iterations while 
 maintaining data and control dependencies. It is built on interchange primitive but while interchange primitive
 handles only two adjacent microsteps, superstep construction moves around scheduling steps with multiple microsteps. 
 The interchange primitive is extended by non-trivial induction along the length of the scheduling steps to achieve the desired result. 
-Superstep construction primitive is proved using the 
-interchange primitive and a key invariant on correspondence between back-edges of sequential and pipelined loops~\cite{disha-itp14}. 
+Superstep construction primitive is proved using the interchange primitive and a key invariant 
+on correspondence between back-edges of sequential and pipelined loops~\cite{disha-itp14}. 
 
 \subsection{Correctness of Our Algorithm}
 
@@ -57,6 +47,7 @@ Following is an English paraphrase of the final theorem.
 If the pipeline generation succeeds without error,
 executing the pipelined CCDFG (a combination of $pre$, $loop$ and $post$) for $no\_pp\_steps$
 generates the same state of the relevant variables as executing the sequential CCDFG $c$ for $no\_seq\_steps$.
+\end{quote}
 %\small
 %\begin{equation}
 %\begin{split}
@@ -64,18 +55,15 @@ generates the same state of the relevant variables as executing the sequential C
 %no\_pp\_steps &= len P_{pre} + (len P_{loop} * k) + len P_{post}
 %\end{split}
 %\end{equation}
-\end{quote}
 
 The algorithm is essentially built from ground-up using primitives
 as shown in Section~\ref{sec:pipelining-algorithm}. However, 
 apart from proving correctness of each primitive and our key 
 invariant, we also need to ensure that the primitive is applied by 
 our algorithm properly, {\em i.e.}, the environment
-assumptions on which the {\bf correctness of primitive}
+assumptions on which the {\em correctness of primitive}
 depends are maintained appropriately by the algorithm at
-the point where the primitive is applied. 
-
-We can take each stage one by one to understand the complexity involved in 
+the point where the primitive is applied. We can take each stage one by one to understand the complexity involved in 
 verifying the algorithm as a whole, over and above the verification of 
 individual primitives. In the $Remove Branches$ stage, which is the first stage of pipelining algorithm, 
 we have to create a correspondence between randomly executing a CCDFG with branches using basic-block, 
