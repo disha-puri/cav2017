@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.7.6)  13 JAN 2017 01:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.7.6)  22 JAN 2017 00:40
 entering extended mode
 **C:/Users/dpuri/Documents/GitHub/cav2017/cav-2017.tex
 (C:/Users/dpuri/Documents/GitHub/cav2017/cav-2017.tex
@@ -418,9 +418,7 @@ Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibsep=\skip54
 LaTeX Info: Redefining \cite on input line 694.
 \c@NAT@ctr=\count148
-)
-\myindent=\skip55
- (cav-2017.aux)
+) (cav-2017.aux)
 \openout1 = `cav-2017.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
@@ -483,92 +481,103 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 (1introduction.tex [1
 
 
-{C:/Users/dpuri/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2]) (2back
-ground.tex
+{C:/Users/dpuri/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]) (2backgrou
+nd.tex
 
 pdfTeX warning: pdflatex.EXE (file ./fig-proposal/certification-framework.pdf):
  PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<fig-proposal/certification-framework.pdf, id=55, 1156.32pt x 542.025pt>
+<fig-proposal/certification-framework.pdf, id=41, 1156.32pt x 542.025pt>
 File: fig-proposal/certification-framework.pdf Graphic file (type pdf)
 
 <use fig-proposal/certification-framework.pdf>
 Package pdftex.def Info: fig-proposal/certification-framework.pdf used on input
  line 7.
 (pdftex.def)             Requested size: 308.34654pt x 144.54pt.
- [3 <./fig-proposal/certification-framework.pdf>] [4]) (3formalization.tex
-<fig-rpe/C-code.pdf, id=110, 216.81pt x 310.761pt>
+ [2] [3 <./fig-proposal/certification-framework.pdf>]) (3formalization.tex [4]
+
+pdfTeX warning: pdflatex.EXE (file ./fig-proposal/formalization.pdf): PDF inclu
+sion: found PDF version <1.7>, but at most version <1.5> allowed
+<fig-proposal/formalization.pdf, id=109, 963.12581pt x 144.54pt>
+File: fig-proposal/formalization.pdf Graphic file (type pdf)
+
+<use fig-proposal/formalization.pdf>
+Package pdftex.def Info: fig-proposal/formalization.pdf used on input line 49.
+(pdftex.def)             Requested size: 325.215pt x 48.8077pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [5 <./fig-proposal/formalization.pdf>]
+<fig-rpe/C-code.pdf, id=128, 216.81pt x 310.761pt>
 File: fig-rpe/C-code.pdf Graphic file (type pdf)
  <use fig-rpe/C-code.pdf>
-Package pdftex.def Info: fig-rpe/C-code.pdf used on input line 53.
+Package pdftex.def Info: fig-rpe/C-code.pdf used on input line 148.
 (pdftex.def)             Requested size: 75.6299pt x 108.405pt.
 
-<fig-rpe/seq-ccdfg.pdf, id=111, 289.08pt x 346.89601pt>
+<fig-rpe/seq-ccdfg.pdf, id=129, 289.08pt x 346.89601pt>
 File: fig-rpe/seq-ccdfg.pdf Graphic file (type pdf)
 
 <use fig-rpe/seq-ccdfg.pdf>
-Package pdftex.def Info: fig-rpe/seq-ccdfg.pdf used on input line 55.
+Package pdftex.def Info: fig-rpe/seq-ccdfg.pdf used on input line 150.
 (pdftex.def)             Requested size: 90.33727pt x 108.405pt.
- [5]
-<fig-rpe/pipelined_ccdfg.pdf, id=125, 361.35pt x 310.761pt>
-File: fig-rpe/pipelined_ccdfg.pdf Graphic file (type pdf)
 
-<use fig-rpe/pipelined_ccdfg.pdf>
-Package pdftex.def Info: fig-rpe/pipelined_ccdfg.pdf used on input line 75.
-(pdftex.def)             Requested size: 126.04984pt x 108.405pt.
+Overfull \hbox (23.00722pt too wide) in paragraph at lines 188--194
+\OT1/cmr/m/n/10 ex-plicit value of $\OML/cmm/m/it/10 k[]$ \OT1/cmr/m/n/10 is gi
+ven by the term \OT1/cmtt/m/n/10 (+ (- k 1) (ceil m pp-interval))\OT1/cmr/m/n/1
+0 . 
+ []
 
-<fig-rpe/pp-clock-cycles.pdf, id=126, 361.35pt x 310.761pt>
-File: fig-rpe/pp-clock-cycles.pdf Graphic file (type pdf)
+[6 <./fig-rpe/C-code.pdf> <./fig-rpe/seq-ccdfg.pdf>]
+Overfull \hbox (30.20923pt too wide) in paragraph at lines 220--262
+\OT1/cmr/m/n/10 rem. Two key func-tions that ap-pear in the the-o-rem above are
+ \OT1/cmtt/m/n/10 superstep-construction
+ []
 
-<use fig-rpe/pp-clock-cycles.pdf>
-Package pdftex.def Info: fig-rpe/pp-clock-cycles.pdf used on input line 77.
-(pdftex.def)             Requested size: 126.04984pt x 108.405pt.
- [6 <./fig-rpe/C-code.pdf> <./fig-rpe/seq-ccdfg.pdf> <./fig-rpe/pipelined_ccdfg
-.pdf> <./fig-rpe/pp-clock-cycles.pdf>])
-(5pipelining-algorithm.tex [7]
+) (5pipelining-algorithm.tex [7]
+
+pdfTeX warning: pdflatex.EXE (file ./fig-proposal/algorithm-using-primitives.pd
+f): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<fig-proposal/algorithm-using-primitives.pdf, id=179, 1047.915pt x 867.24pt>
+File: fig-proposal/algorithm-using-primitives.pdf Graphic file (type pdf)
+
+<use fig-proposal/algorithm-using-primitives.pdf>
+Package pdftex.def Info: fig-proposal/algorithm-using-primitives.pdf used on in
+put line 46.
+(pdftex.def)             Requested size: 157.18047pt x 130.08621pt.
+
 
 pdfTeX warning: pdflatex.EXE (file ./fig-proposal/conditional-branch-primitive.
 pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
 
 
-<fig-proposal/conditional-branch-primitive.pdf, id=190, 722.7pt x 563.64912pt>
+<fig-proposal/conditional-branch-primitive.pdf, id=180, 722.7pt x 563.64912pt>
 File: fig-proposal/conditional-branch-primitive.pdf Graphic file (type pdf)
 
 <use fig-proposal/conditional-branch-primitive.pdf>
 Package pdftex.def Info: fig-proposal/conditional-branch-primitive.pdf used on 
-input line 50.
+input line 48.
 (pdftex.def)             Requested size: 166.79092pt x 130.08621pt.
+ [8]
+Overfull \hbox (0.34302pt too wide) in paragraph at lines 102--103
+[]\OT1/cmr/bx/n/10 Remove Branches\OT1/cmr/m/n/10 : We ap-ply the branch prim-i
+-tive on $\OML/cmm/m/it/10 S$ \OT1/cmr/m/n/10 to re-move branches. 
+ []
 
-
-pdfTeX warning: pdflatex.EXE (file ./fig-proposal/algorithm-using-primitives.pd
-f): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<fig-proposal/algorithm-using-primitives.pdf, id=191, 1047.915pt x 867.24pt>
-File: fig-proposal/algorithm-using-primitives.pdf Graphic file (type pdf)
-
-<use fig-proposal/algorithm-using-primitives.pdf>
-Package pdftex.def Info: fig-proposal/algorithm-using-primitives.pdf used on in
-put line 52.
-(pdftex.def)             Requested size: 157.18047pt x 130.08621pt.
- [8 <./fig-proposal/conditional-branch-primitive.pdf> <./fig-proposal/algorithm
--using-primitives.pdf>]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 90.
-
-
-LaTeX Warning: Reference `fig:algo1-3' on page 9 undefined on input line 134.
-
-[9]
+put line 109.
+[9 <./fig-proposal/algorithm-using-primitives.pdf> <./fig-proposal/conditional-
+branch-primitive.pdf>]
 
 pdfTeX warning: pdflatex.EXE (file ./fig-proposal/algorithm-after-data-propagat
 ion-2.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> a
 llowed
 
-<fig-proposal/algorithm-after-data-propagation-2.pdf, id=256, 353.95227pt x 621
+<fig-proposal/algorithm-after-data-propagation-2.pdf, id=245, 353.95227pt x 621
 .40819pt>
 File: fig-proposal/algorithm-after-data-propagation-2.pdf Graphic file (type pd
 f)
  <use fig-proposal/algorithm-after-data-propagation-2.pdf>
 Package pdftex.def Info: fig-proposal/algorithm-after-data-propagation-2.pdf us
-ed on input line 139.
+ed on input line 133.
 (pdftex.def)             Requested size: 102.90816pt x 180.67499pt.
 
 
@@ -576,37 +585,34 @@ pdfTeX warning: pdflatex.EXE (file ./fig-proposal/algorithm-after-shadow-regist
 er.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allo
 wed
 
-<fig-proposal/algorithm-after-shadow-register.pdf, id=257, 353.95227pt x 664.65
+<fig-proposal/algorithm-after-shadow-register.pdf, id=246, 353.95227pt x 664.65
 637pt>
 File: fig-proposal/algorithm-after-shadow-register.pdf Graphic file (type pdf)
  <use fig-proposal/algorithm-after-shadow-register.pdf>
 Package pdftex.def Info: fig-proposal/algorithm-after-shadow-register.pdf used 
-on input line 141.
+on input line 135.
 (pdftex.def)             Requested size: 96.21649pt x 180.67499pt.
 
-Overfull \hbox (1.01744pt too wide) in paragraph at lines 151--158
+Overfull \hbox (1.01744pt too wide) in paragraph at lines 145--152
 \OT1/cmr/m/n/10 able $\OML/cmm/m/it/10 w[]$ $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 
 WriteVariable\OT1/cmr/m/n/10 )$ and the last read of the vari-able $\OML/cmm/m/
 it/10 r[]$ $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 LastReadVariable\OT1/cmr/m/n/10 )
 $
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [10]
+[10]
 
 pdfTeX warning: pdflatex.EXE (file ./fig-proposal/algorithm-after-superstep-con
 struction.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.
 5> allowed
 
-<fig-proposal/algorithm-after-superstep-construction.pdf, id=267, 592.38637pt x
+<fig-proposal/algorithm-after-superstep-construction.pdf, id=257, 592.38637pt x
  592.38637pt>
 File: fig-proposal/algorithm-after-superstep-construction.pdf Graphic file (typ
 e pdf)
  <use fig-proposal/algorithm-after-superstep-construction.pdf>
 Package pdftex.def Info: fig-proposal/algorithm-after-superstep-construction.pd
-f used on input line 182.
+f used on input line 176.
 (pdftex.def)             Requested size: 144.53482pt x 144.54pt.
 
 
@@ -614,38 +620,24 @@ pdfTeX warning: pdflatex.EXE (file ./fig-proposal/algorithm-after-adding-branch
 es.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allo
 wed
 
-<fig-proposal/algorithm-after-adding-branches.pdf, id=268, 614.295pt x 542.025p
+<fig-proposal/algorithm-after-adding-branches.pdf, id=258, 614.295pt x 542.025p
 t>
 File: fig-proposal/algorithm-after-adding-branches.pdf Graphic file (type pdf)
  <use fig-proposal/algorithm-after-adding-branches.pdf>
 Package pdftex.def Info: fig-proposal/algorithm-after-adding-branches.pdf used 
-on input line 184.
+on input line 178.
 (pdftex.def)             Requested size: 163.80908pt x 144.54pt.
  [11 <./fig-proposal/algorithm-after-data-propagation-2.pdf> <./fig-proposal/al
 gorithm-after-shadow-register.pdf>]) (6Proof.tex [12 <./fig-proposal/algorithm-
 after-superstep-construction.pdf> <./fig-proposal/algorithm-after-adding-branch
 es.pdf>] [13])
-(7SEC.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [14]
-
-pdfTeX warning: pdflatex.EXE (file ./fig-proposal/testing.pdf): PDF inclusion: 
-found PDF version <1.7>, but at most version <1.5> allowed
-<fig-proposal/testing.pdf, id=399, 368.46318pt x 126.33023pt>
-File: fig-proposal/testing.pdf Graphic file (type pdf)
-
-<use fig-proposal/testing.pdf>
-Package pdftex.def Info: fig-proposal/testing.pdf used on input line 8.
-(pdftex.def)             Requested size: 316.1806pt x 108.405pt.
-) (8related-work.tex
+(7SEC.tex [14]) (8related-work.tex
 Overfull \hbox (2.3215pt too wide) in paragraph at lines 4--23
 \OT1/cmr/m/n/10 pipelines, hard-ware pipelines and soft-ware pipelines. Mi-cro-
 pro-ces-sor pipelines [[],
  []
 
-[15 <./fig-proposal/testing.pdf>]) (9conclusion.tex [16]) (cav-2017.bbl
-[17]
+[15]) (9conclusion.tex) [16] (cav-2017.bbl [17]
 Missing character: There is no Ã in font cmr10!
 Missing character: There is no © in font cmr10!
 Missing character: There is no Ã in font cmr10!
@@ -669,36 +661,42 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 74.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 74.
 Package rerunfilecheck Info: File `cav-2017.out' has not changed.
 (rerunfilecheck)             Checksum: 776B922973DF1A30DF42736767410C59;110.
-
-
-LaTeX Warning: There were undefined references.
-
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 74.
  ) 
 Here is how much of TeX's memory you used:
- 7912 strings out of 493634
- 112700 string characters out of 3142961
- 216931 words of memory out of 3000000
- 11075 multiletter control sequences out of 15000+200000
- 8937 words of font info for 34 fonts, out of 3000000 for 9000
+ 7913 strings out of 493634
+ 112521 string characters out of 3142961
+ 215729 words of memory out of 3000000
+ 11074 multiletter control sequences out of 15000+200000
+ 11562 words of font info for 45 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 29i,12n,27p,1305b,463s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Users/dpuri/Desktop/MikTex/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/
-Users/dpuri/Desktop/MikTex/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/
-dpuri/Desktop/MikTex/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Users/dpuri/D
-esktop/MikTex/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/dpuri/Deskto
-p/MikTex/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/dpuri/Desktop/MikT
-ex/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/dpuri/Desktop/MikTex/font
-s/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/dpuri/Desktop/MikTex/fonts/type1
-/public/amsfonts/cm/cmr7.pfb><C:/Users/dpuri/Desktop/MikTex/fonts/type1/public/
-amsfonts/cm/cmr9.pfb><C:/Users/dpuri/Desktop/MikTex/fonts/type1/public/amsfonts
-/cm/cmsy10.pfb><C:/Users/dpuri/Desktop/MikTex/fonts/type1/public/amsfonts/cm/cm
-sy7.pfb><C:/Users/dpuri/Desktop/MikTex/fonts/type1/public/amsfonts/cm/cmti10.pf
-b><C:/Users/dpuri/Desktop/MikTex/fonts/type1/public/amsfonts/cm/cmti9.pfb><C:/U
-sers/dpuri/Desktop/MikTex/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on cav-2017.pdf (19 pages, 878656 bytes).
+ 29i,12n,27p,1305b,465s stack positions out of 5000i,500n,10000p,200000b,50000s
+pdfTeX warning (dest): name{Hfootnote.3} has been referenced but does not exi
+st, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist
+, replaced by a fixed one
+
+<C:/Users/dpuri/Desktop/MikTex/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Us
+ers/dpuri/Desktop/MikTex/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/dp
+uri/Desktop/MikTex/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Users/dpuri/Des
+ktop/MikTex/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/dpuri/Desktop/
+MikTex/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/dpuri/Desktop/MikTex
+/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/dpuri/Desktop/MikTex/fonts/
+type1/public/amsfonts/cm/cmr10.pfb><C:/Users/dpuri/Desktop/MikTex/fonts/type1/p
+ublic/amsfonts/cm/cmr6.pfb><C:/Users/dpuri/Desktop/MikTex/fonts/type1/public/am
+sfonts/cm/cmr7.pfb><C:/Users/dpuri/Desktop/MikTex/fonts/type1/public/amsfonts/c
+m/cmr9.pfb><C:/Users/dpuri/Desktop/MikTex/fonts/type1/public/amsfonts/cm/cmsy10
+.pfb><C:/Users/dpuri/Desktop/MikTex/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C
+:/Users/dpuri/Desktop/MikTex/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/User
+s/dpuri/Desktop/MikTex/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/dpur
+i/Desktop/MikTex/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
+Output written on cav-2017.pdf (19 pages, 829162 bytes).
 PDF statistics:
- 521 PDF objects out of 1000 (max. 8388607)
- 85 named destinations out of 1000 (max. 500000)
- 69 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 498 PDF objects out of 1000 (max. 8388607)
+ 83 named destinations out of 1000 (max. 500000)
+ 59 words of extra memory for PDF output out of 10000 (max. 10000000)
 

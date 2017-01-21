@@ -4,9 +4,9 @@
 Certification of our loop pipelining algorithm naturally requires a certification of each of our primitives. In addition, we need to ensure that every time a primitive needs to be applied, the conditions under which the primitive can be applied are maintained. We discuss both aspects below.
 
 \subsection{Correctness of Primitives}
-We must prove that applying a particular primitive is correct, 
-{\em i.e.}, maintaining a certain invariant. This is proven without
-considering how it is applied in the context of a pipeline
+We prove that applying a particular primitive is correct, 
+{\em i.e.}, maintains a certain invariant. This proof does not 
+consider how it is applied in the context of a pipeline
 synthesis algorithm. In {\em $\phi$-elimination primitive}, we prove that the algorithm 
 correctly resolves the $\phi$ to create multiple assignment statements. 
 We induct along the length of each sub-microstep of $\phi$-construct and
@@ -41,13 +41,13 @@ on correspondence between back-edges of sequential and pipelined loops~\cite{dis
 
 \subsection{Correctness of Our Algorithm}
 
-Following is an English paraphrase of the final theorem.
+%Following is an English paraphrase of the final theorem.
   
-\begin{quote}  
-If the pipeline generation succeeds without error,
-executing the pipelined CCDFG (a combination of $pre$, $loop$ and $post$) for $no\_pp\_steps$
-generates the same state of the relevant variables as executing the sequential CCDFG $c$ for $no\_seq\_steps$.
-\end{quote}
+%\begin{quote}  
+%If the pipeline generation succeeds without error,
+%executing the pipelined CCDFG (a combination of $pre$, $loop$ and $post$) for $no\_pp\_steps$
+%generates the same state of the relevant variables as executing the sequential CCDFG $c$ for $no\_seq\_steps$.
+%\end{quote}
 %\small
 %\begin{equation}
 %\begin{split}

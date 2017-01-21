@@ -37,8 +37,10 @@ of a generated pipeline) and the reference model can be compared with a pipeline
 implementation using SEC effectively, and (2) it can be mechanically verified to correctly preserve the semantics of
 sequential (non-pipelined) specification of loop execution. The viability of 
 this approach was shown by comparing pipeline generated from this algorithm with RTL implementation 
-using SEC. However, this algorithm was not certified as well as incomplete. Certification is a key component 
-without which correctness of behavioral synthesis process for pipelined designs cannot be claimed.
+using SEC. However, this algorithm was not certified as well as incomplete. 
+In fact, during our certification process we found a number of errors in the algorithm, 
+which makes the entire certification flow for behavioral synthesis suspect. 
+%Certification is a key component without which correctness of behavioral synthesis process for pipelined designs cannot be claimed.
 Our work on developing a certified loop pipelining algorithm using our framework of certified 
 primitives is important to facilitating formal verification of behaviorally synthesized
  pipeline designs.
@@ -46,9 +48,8 @@ primitives is important to facilitating formal verification of behaviorally synt
 \medskip
 The key contributions of this paper are:
 \begin{enumerate}
-\item Identifying the key provable primitives and certifying these primitives in ACL2 theorem prover; 
-\item Developing our own executable loop pipelining algorithm in ACL2 using those primitives and certifying this algorithm using ACL2 theorem prover;
-\item Testing our certified loop pipelining algorithm on industrial-strength designs
+\item Developing a certified executable loop pipelining algorithm in ACL2 using our framework of certified pipelining primitives 
+\item Demonstrating the viability of the certified loop pipelining algorithm in a behavioral synthesis certification flow for industrial hardware designs
 \end{enumerate}
 
 The remainder of this paper is organized as

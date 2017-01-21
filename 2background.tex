@@ -29,7 +29,6 @@ RTL which goes through further optimizations
   registers to variables, and generating a controlling finite-state
   machine to implement the schedule.
 \end{enumerate}. 
-
 There is a large gap in abstraction
 between the ESL and RTL descriptions so that there is little
 correspondence in internal variables between the two.  Consequently,
@@ -59,11 +58,9 @@ IRs will not succeed, causing equivalence checking to fail.
 Unfortunately, loop pipelining falls in the category of
 transformations that significantly changes the structure of the IR.
 It is a quintessential transformation that changes the control/data
-flow and introduces additional control structures (%\eg, 
+flow and introduces additional control structures
 to eliminate. Thus a specialized approach is warranted for
-handling its certification.
-
-Hao {\em et al.} proposed a pipeline generation algorithm using feedback (like pipeline interval) from the synthesis tool~\cite{hrx:dac-12}. 
+handling its certification. Hao {\em et al.} proposed a pipeline generation algorithm using feedback (like pipeline interval) from the synthesis tool~\cite{hrx:dac-12}. 
 They show that to verify the correspondence between sequential CCDFG and pipelined RTL, it is sufficient to
 \begin{enumerate} 
 \item Check that the algorithm can generate a pipeline reference model for the parameters reported by synthesis.

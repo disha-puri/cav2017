@@ -58,8 +58,8 @@ The dynamic VCs checked by symbolic simulation essentially
 certify that the pipeline generation did not overlook any
 hazards.
 
-This is where our work differs from theirs.  Our work is
-expected to provide a single theorem certifying the
+This is where our work differs from theirs.  Our work provides 
+a single theorem certifying the
 correctness of the reference pipelined implementation,
 without requiring further runtime hazard check.
 Furthermore, their correspondence theorem relates the
@@ -82,7 +82,7 @@ translation validation) to a more complex invariant like
 ours.  Of course we must note that we can ``afford'' to
 develop a fully certified algorithm in our approach since
 the pipelines are simpler
-(cf. Chapter~\ref{sec:formalization}); achieving this for
+(cf. Section~\ref{sec:formalization}); achieving this for
 arbitrary software pipeline may require further more subtle
 invariants.
 

@@ -1,12 +1,8 @@
 \section{Our Approach}
 \label{sec:pipelining-algorithm}
-
-Pipeline synthesis is based on the key observation that
-successive iterations can be overlapped without affecting execution as long
+Pipeline synthesis is based on the key observation that successive iterations can be overlapped without affecting execution as long
 as data and control dependecies are correctly maintained. 
-Thus, the three main
-activities of a pipeline synthesis algorithm are to
-(1)~identify and remove possible hazards (2)~overlap the
+Thus, the three main activities of a pipeline synthesis algorithm are to (1)~identify and remove possible hazards (2)~overlap the
 successive iterations according to the pipeline interval, and 
 (3)~ensure proper placement of conditional and unconditional branches. In our case,
 the identification of data hazards is simplified since the synthesis tool
@@ -44,24 +40,24 @@ not have made any difference in the execution. Also, since we are not changing t
 the state after end of execution for both CCDFGs as far as real variables are concerned (all variables
  excluding all shadow registers) is same. 
 
-\begin{figure}[H]
+\begin{figure}
 \begin{center}
 \begin{tabular}{cc}
-\includegraphics[height=1.8in]{fig-proposal/conditional-branch-primitive}
-& 
 \includegraphics[height=1.8in]{fig-proposal/algorithm-using-primitives}
+& 
+\includegraphics[height=1.8in]{fig-proposal/conditional-branch-primitive}
 \\
 (a) &  (b) 
 \end{tabular}
 \end{center}
-\caption{(a) Branch Primitive (b) Algorithm Using Primitives}
+\caption{(a) Algorithm Using Primitives (b) Branch Primitive}
 \label{fig:branch-primitive}
 \end{figure}
 
 {\textbf {Branch primitive}} -- Branch instructions are required for control flow. However, reasoning about 
 execution of branch instructions in a loop everytime we apply a primitive can make proof very complex.
 We note that if we specifically assume that the exit condition becomes true after completing $k$ iterations, then we can remove the conditional branch.
-To understand the branch primitive (c.f. Figure~\ref{fig:branch-primitive}), 
+To understand the branch primitive (c.f. Figure~\ref{fig:branch-primitive}(b)), 
 let's assume there is a conditional branch in the sequential loop structure $S$, which points to either
 the next microstep in sequence or exits the loop by branching to the scheduling step
 $Exit$. Let $S_{preExit}$ be the collection of microsteps before this branch in $S$ and
@@ -84,28 +80,26 @@ forwarding (forward value of data within a single clock cycle); thus $X$ and $Z$
 
 \subsection{Our Loop Pipelining Algorithm}
 
-Given a sequential loop $S$ in CCDFG $C$ and pipeline interval $I$, we can create a pipelined loop $P$ using Algorithm~\ref{algo:loop}. Note that every step of the algorithm is build from ground up using our framework of provable primitives such that the algorithm can be certified by theorem proving (c.f. Figure~\ref{fig:branch-primitive} (b)). 
+Given a sequential loop $S$ in CCDFG $C$ and pipeline interval $I$, we can create a pipelined loop $P$ (refer Figure ~\ref{fig:branch-primitive} (a)). Note that every step of the algorithm is build from ground up using our framework of provable primitives such that the algorithm can be certified by theorem proving. Now, we describe the steps to convert a sequential loop CCDFG $S$ (c.f. Figure~\ref{fig:branch-primitive}) to a pipelined loop CCDFG:
 
-\begin{algorithm}[H]
-\caption{Pipelining Algorithm}
-\label{algo:loop}
-\begin{algorithmic}[1]
-\Procedure{PipelineLoop}{S, I}
-\State $S_1 \leftarrow RemoveBranches(S)$
-\State $S_2 \leftarrow UnrollLoopOnce(S_1)$
-\State $S_3 \leftarrow \phi-Elimination (S_2) $.
-\State $S_4 \leftarrow DataPropagation (S_3, I) $.
-\State $S_5 \leftarrow GenerateShadowRegisters (S_4, I) $.
-\State $ S_6 \leftarrow SuperstepConstruction (S_5, I) $.
-\State $P \leftarrow AddBranches (S_6) $
-\State \textbf{return} $(P)$.
-\EndProcedure
-\end{algorithmic}
-\end{algorithm}
+%\begin{algorithm}
+%\caption{Pipelining Algorithm}
+%\label{algo:loop}
+%\begin{algorithmic}[1]
+%\Procedure{PipelineLoop}{S, I}
+%\State $S_1 \leftarrow RemoveBranches(S)$
+%\State $S_2 \leftarrow UnrollLoopOnce(S_1)$
+%\State $S_3 \leftarrow \phi-Elimination (S_2) $.
+%\State $S_4 \leftarrow DataPropagation (S_3, I) $.
+%\State $S_5 \leftarrow GenerateShadowRegisters (S_4, I) $.
+%\State $ S_6 \leftarrow SuperstepConstruction (S_5, I) $.
+%\State $P \leftarrow AddBranches (S_6) $
+%\State \textbf{return} $(P)$.
+%\EndProcedure
+%\end{algorithmic}
+%\end{algorithm}
 
-Now, we describe the steps to convert a sequential loop CCDFG $S$ (c.f. Figure~\ref{fig:branch-primitive}) to a pipelined loop CCDFG:
-
-{\bf Remove Branches}: We apply the branch primitive on $S$ to remove branches by explicitly defining the control flow. 
+{\bf Remove Branches}: We apply the branch primitive on $S$ to remove branches. 
 
 {\bf Unroll Loop Once}: The first iteration behaves differently than the rest due to $\phi$-construct. So, we unroll the loop $S_{loop}$ once and call it $S_{pre}$. 
 
@@ -131,7 +125,7 @@ Now, we describe the steps to convert a sequential loop CCDFG $S$ (c.f. Figure~\
 propagation across pipeline iterations. It is a critical step as we want to make sure that when we pipeline a loop, we do not read a variable which has not
 yet been written. A critical observation is that data propagation is required only for loop carried dependencies.
 $GetLoopCarriedDependencies$ identifies the microsteps where loop carried dependencies are being read. Then,
-$CheckConflict$ checks whether there would be a conflict when we pipeline the loop. Conflict occurs when the value being read in a microstep is not yet written in the pipelined loop execution. If so, $RelocateMSteps$ relocates the microstep which is causing the data hazard to the previous iteraton. Note that this step requires multiple applications of interchange primitive and very complex induction. This step ensures that any variable which is being read has already been written. Note that in order to maintain the invariant, only those microsteps can be propagated which exist in $S_{preExit}$, which means only those steps which occur before the conditional branch in original CCDFG can be relocated. This ensures that our algorithm does not have the bug which the previously proposed algorithm had. In Figure~\ref{fig:algo1-3}(b) we found that the loop carried dependency $i'$ in $X$ would create a conflict when we would move $X$ before $Z$ while pipelining. So, we relocate the microstep $i := i'$ as shown in Figure~\ref{fig:algo2-2}(a). This step needs to be repeated for every variable found using $GetLoopCarriedDependencies$.
+$CheckConflict$ checks whether there would be a conflict when we pipeline the loop. Conflict occurs when the value being read in a microstep is not yet written in the pipelined loop execution. If so, $RelocateMSteps$ relocates the microstep which is causing the data hazard to the previous iteraton. Note that this step requires multiple applications of interchange primitive and very complex induction. This step ensures that any variable which is being read has already been written. Note that in order to maintain the invariant, only those microsteps can be propagated which exist in $S_{preExit}$, which means only those steps which occur before the conditional branch in original CCDFG can be relocated. This ensures that our algorithm does not have the bug which the previously proposed algorithm had. In Figure~\ref{fig:algo2-2}(a) we found that the loop carried dependency $i'$ in $X$ would create a conflict when we would move $X$ before $Z$ while pipelining. So, we relocate the microstep $i := i'$ as shown in Figure~\ref{fig:algo2-2}(a). This step needs to be repeated for every variable found using $GetLoopCarriedDependencies$.
 
 \begin{figure}[t!]
 \begin{center}

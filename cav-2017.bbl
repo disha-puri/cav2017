@@ -1,5 +1,10 @@
 \begin{thebibliography}{10}
 
+\bibitem{llvmphi}
+{{Phi Operator} LLVM reference manual}.
+\newblock {\url{http://llvm.org/releases/2.9/docs/LangRef.html#i_phi}}.
+\newblock {Accessed: September 29, 2016}.
+
 \bibitem{coq}
 Yves Bertot, Pierre Castéran, Gérard~(informaticien) Huet, and Christine
   Paulin-Mohring.
@@ -90,12 +95,6 @@ Youn-Long Lin.
 Hanbing Liu and J.~Strother Moore.
 \newblock Executable jvm model for analytical reasoning: a study.
 \newblock {\em Sci. Comput. Program.}, 57(3):253--274, September 2005.
-
-\bibitem{McCarthy}
-John McCarthy.
-\newblock Recursive functions of symbolic expressions and their computation by
-  machine, part i.
-\newblock {\em Commun. ACM}, 3(4):184--195, April 1960.
 
 \bibitem{forte}
 Michael Meredith.
