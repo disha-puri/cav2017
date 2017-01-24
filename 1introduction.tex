@@ -29,7 +29,15 @@ correctness of behaviorally synthesized pipeline designs
 is a critical issue in bringing behavioral synthesis into practice.
 
 An approach for certifying loop pipelining transformations using a combination of SEC and 
-theorem proving techniques has been proposed earlier~\cite{hrx:dac-12}. The most critical and complex
+theorem proving techniques has been proposed earlier~\cite{hrx:dac-12}. 
+ One of the key requirements for the overall verification approach is to avoid 
+ manual reasoning on a per-design basis, given the ecosystem in which the framework is deployed.  
+ That is, the target user of the verified individual designs is not a theorem proving expert but 
+ a verification engineer conversant with the design and able to run a verification tool.  A strong positive 
+ for the approach is that theorem proving is necessary only sparingly for a specific algorithm 
+ (where you can have control over the algorithm definition without compromising applicability of the framework on ESL designs); 
+ this is done only once for the whole framework, not per design. 
+The most critical and complex
 component of this approach is developing
 a loop pipelining algorithm with two key properties: (1) it generates a reference pipeline model 
 by exploiting pipeline generation information from the synthesis flow (e.g., the iteration interval 
@@ -44,7 +52,6 @@ which makes the entire certification flow for behavioral synthesis suspect.
 Our work on developing a certified loop pipelining algorithm using our framework of certified 
 primitives is important to facilitating formal verification of behaviorally synthesized
  pipeline designs.
-
 \medskip
 The key contributions of this paper are:
 \begin{enumerate}
