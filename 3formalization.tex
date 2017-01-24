@@ -46,14 +46,13 @@ state.
 
 \begin{figure}
 \begin{center}
-\includegraphics[width=4.5in]{fig-proposal/formalization}
+\includegraphics[width=4.5in]{fig-proposal/formalization1}
 \end{center}
-\caption{ACL2 syntax}
+\caption{Modelling programming Language constructs in ACL2}
 \label{fig:syntax}
 \end{figure}
 
-%Defining the semantics of most supported statements is straightforward, with one exception.  The exception is the so-called ``$\phi$-construct'' available in LLVM~\cite{llvmphi}.  A $\phi$-construct is a list of $\phi$-statements.  A $\phi$-statement is $v := \phi [\sigma, bb1] [\tau, bb2]$, where $v$ is a variable, $\sigma$ and $\tau$ are expressions, and $bb1$ and $bb2$ are basic blocks: if it is reached from $bb1$ then it is the same as the assignment statement $v := \sigma$; if reached from $bb2$, it is the same as $v := \tau$; the meaning is undefined otherwise. The construct is complex since the effect of executing this statement on a CCDFG state $s$ depends not only on the state $s$ but also on how $s$ is reached by the control flow.
-%Unfortunately, $\phi$-statements are required in loop designs --- they are used to evaluate the value of loop carried dependencies. Consequently, the complexity induced by this instruction cannot be avoided.
+Defining the semantics of most supported statements is straightforward, with one exception.  The exception is the so-called ``$\phi$-construct'' available in LLVM~\cite{llvmphi}.  A $\phi$-construct is a list of $\phi$-statements.  A $\phi$-statement is $v := \phi [\sigma, bb1] [\tau, bb2]$, where $v$ is a variable, $\sigma$ and $\tau$ are expressions, and $bb1$ and $bb2$ are basic blocks: if it is reached from $bb1$ then it is the same as the assignment statement $v := \sigma$; if reached from $bb2$, it is the same as $v := \tau$; the meaning is undefined otherwise. The construct is complex since the effect of executing this statement on a CCDFG state $s$ depends not only on the state $s$ but also on how $s$ is reached by the control flow. Unfortunately, $\phi$-statements are required in loop designs --- they are used to evaluate the value of loop carried dependencies. Consequently, the complexity induced by this instruction cannot be avoided. 
 
 %\small
 %\begin{verbatim}
@@ -69,16 +68,17 @@ state.
 %\end{verbatim}
 %\normalsize
 
-%Here {\tt phi-1} recognizes an expression of the form {\tt
-%  ((E0 b) (E1 b-prime))} where {\tt E0} and {\tt E1} are
-%expressions and {\tt b} and {\tt b-prime} are symbols
-%representing basic blocks.  Thus in ACL2, the
-%$\phi$-statement looks like {\tt (v (phi ((E0 b) (E1
-%  b-prime))))}.  Finally, the execution semantics requires
-%the additional parameter {\tt prev-bb} to track the previous
-%basic block.
-
-%% Comment: Function definition for execute-phi uses the functions
+In Figure~\ref{fig:syntax}, in function {\em phi-expression-p}, {\tt phi-1} recognizes an expression of the form {\tt
+  ((E0 b) (E1 b-prime))} where {\tt E0} and {\tt E1} are
+expressions and {\tt b} and {\tt b-prime} are symbols
+representing basic blocks.  Thus in ACL2, the
+$\phi$-statement looks like {\tt (v (phi ((E0 b) (E1
+  b-prime))))}.  Finally, the execution semantics requires
+the additional parameter {\tt prev-bb} to track the previous
+basic block. In {\em execute-phi}, the {\em init-state} represents the state of a CCDFG before executing $\phi$-statement. The function 
+{\em variables-of} is used to get a list of all the variables of {\em init-state} with their corresponding values. 
+{\em replace-var} replaces the values of the variable {var} to {val} in the list of those variables.
+%Function definition for execute-phi uses the functions
 %%evaluate-val, replace-val and variables-of which are not
 %%explained.
 
@@ -218,8 +218,6 @@ The theorem can be stated in ACL2 as follows.
 
 The theorem involves several ACL2 functions, \eg,
 {\tt get-real}, \\ {\tt superstep-construction}, etc. 
-For details, one can
-  refer to our proof-scripts. 
 %We do not
 %discuss the detailed definitions of these functions in the
 %paper, but they are available with the supporting ACL2
@@ -227,7 +225,7 @@ For details, one can
 We provide a brief, informal
 description of some of the critical functions in the theorem.
 Two key functions that appear in the theorem above are {\tt
-  superstep-construction} and {\tt run-ccdfg}. The function {\tt run-ccdfg} runs a CCDFG including a
+  superstep-construction} and {\tt run-ccdfg}. The function {\tt run-ccdfg} (refer Figure~\ref{fig:syntax}) runs a CCDFG including a
 pipelinable loop in three parts, first the prologue before the
 loop, next the loop itself, and finally the epilogue past the
 loop.
