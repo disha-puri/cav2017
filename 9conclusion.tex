@@ -3,25 +3,39 @@
 
 We have developed a framework of succinct certified primitives essential to build pipelining algorithms. We utilize our framework of certified primitives as backbone to build our certified loop pipelining algorithm. Since, we have a certified loop pipelining algorithm, we can confidently say that there are no data hazards and executing a sequential loop is same as executing a pipelined loop created using our algorithm. We have tested the pipeline reference model created using our algorithm on a variety of ESL designs across different application domains. Table 2 gives a high level overview of some of the ACL2 effort involved in such kind of work. %This shows that our algorithm is practical and can be used for industrial strength designs with tens of thousands of RTL.  Our current ACL2 script has $296$ definitions and $1012$ lemmas, including many lemmas about structural properties of CCDFGs (but not counting those from the false starts). 
 
+
 \begin{table}
   \centering
   \label{fig:proof}
-  \begin{tabular}{| c || c | c |}
+  \begin{tabular}{| c || c | c | c | c | c | }
     \hline
-    & Definitions & Lemmas \\
+& Branch &  $\phi$-Assign   &     Interchange  &   Shadow &  Superstep   \\
+& Primitive & Primitive & Primitive & Primitive & Construction \\
+ \hline
+ \hline                 
+Definitions  & 26        &   8          &    5 & 40 & 18 \\
+\hline
+Lemmas    & 276       &     13         &    83  & 90 & 67 \\
+\hline
+  \end{tabular}
+        \caption{Effort in Mechanizing Primitives framework}
+\end{table}
+
+\begin{table}
+  \centering
+  \label{fig:proof}
+  \begin{tabular}{| c || c | c | c | c | c | c | c | c | c | c | c | }
     \hline
-    Overall Certification & 296 & 1012 \\
-    \hline
-    CCDFG Formalization & 107 &  \\
-    \hline
-    Removing Branches & 26 & 286 \\ 
-    \hline
-    Data Propagation & 19 & 59 \\ 
-    \hline
-    Shadow Register & 46 & 143 \\
-    \hline
-    Correspondence Invariant & 18 & 122 \\ 
-    \hline
+&   Overall & CCDFG &  Primitives &  Remove & $\phi$-Assign   &   Data &  Shadow &  Invariant & Assuring  & Adding  & seq-pp \\
+                  
+ &  Effort  &  Formalization &   Framework &   Branches & Step   &   Move     &    RegisterStep        &   &  well-formed  & Branches &  equivalence  \\
+                  \hline
+                  \hline
+Definitions  & 274  &  107  &   97 &  20 &  2 &    19 &   6  &  6 & 17 & -  \\
+\hline
+Lemmas    & 1012   &  -  &   529   &  22 &   15 &   59 &   51 &  52 &  278 & 6  \\
+\hline
+%\hline
   \end{tabular}
         \caption{ACL2 Effort}
 \end{table}
