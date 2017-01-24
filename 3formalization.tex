@@ -193,9 +193,8 @@ the sequential and pipelined CCDFG can be paraphrased in English as follows.
    k 1) (ceil m pp-interval))}.
  \end{quote}
 
-The theorem can be stated in ACL2 as follows.\footnote{The theorem mentioned in the paper does not contain
-all the hypotheses. Please refer to our proof scripts
-for final form of this theorem.}
+The theorem can be stated in ACL2 as follows.
+%\footnote{The theorem mentioned in the paper does not contain all the hypotheses. Please refer to our proof scripts for final form of this theorem.}
 
 \small
 \begin{verbatim}
@@ -231,28 +230,17 @@ Two key functions that appear in the theorem above are {\tt
   superstep-construction} and {\tt run-ccdfg}. The function {\tt run-ccdfg} runs a CCDFG including a
 pipelinable loop in three parts, first the prologue before the
 loop, next the loop itself, and finally the epilogue past the
-loop.\footnote{Of course one can have the standard function
-  {\tt run} that executes the entire CCDFG rather than in
-  parts.  However, for reasons that will be clear when we
-  define the invariant, in our case it is easier to do most
-  of the work with the execution in three parts and then
-  assemble them into a final theorem about the CCDFG run in
-  the end.}  The function {\tt superstep-construction} combines the
-scheduling steps of successive iterations to create the
-``scheduling supersteps'' of pipelined CCDFG.  If there are
-data-hazards and pipelined CCDFG cannot be generated as per
+loop.
+%\footnote{Of course one can have the standard function {\tt run} that executes the entire CCDFG rather than in parts.  However, for reasons that will be clear when we define the invariant, in our case it is easier to do most of the work with the execution in three parts and then assemble them into a final theorem about the CCDFG run in the end.}  
+The function {\tt superstep-construction} combines the scheduling steps of successive iterations to create the ``scheduling supersteps'' of pipelined CCDFG.  If there are data-hazards and pipelined CCDFG cannot be generated as per
 the pp-interval given, the function generates an ``error''.
 Finally, the function {\tt get-real} removes from the
 pipelined CCDFG state, all auxiliary variables introduced by
 the pipeline generation algorithm itself, leaving only the
 variables that correspond to the sequential
-CCDFG,\footnote{The algorithm has to introduce new variables
-  in order to eliminate hazards.  One consequence of this is
-  that the new variables so introduced must not conflict
-  with any variable subsequently used in the CCDFG.  Since
-  we do not have a way to ensure generation of fresh
-  variables, this constraint has to be imposed in the
-  hypothesis.}  and {\tt in-order} normalizes ``sorts'' the
+CCDFG,
+%\footnote{The algorithm has to introduce new variables in order to eliminate hazards.  One consequence of this is that the new variables so introduced must not conflict with any variable subsequently used in the CCDFG.  Since we do not have a way to ensure generation of fresh variables, this constraint has to be imposed in the hypothesis.}  
+and {\tt in-order} normalizes ``sorts'' the
 components in a CCDFG state in a normal form so that the
 sequential and pipelined CCDFG states can be compared with
 {\tt equal}.
